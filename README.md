@@ -1,4 +1,4 @@
-# InvertedPendulum wuth Communication Networks
+# InvertedPendulum with Communication Networks
 
 
 The aim of the simulation is to design a Networked Control System for controlling the arm of a
