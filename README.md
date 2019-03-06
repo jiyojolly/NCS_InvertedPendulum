@@ -10,3 +10,5 @@ consider the communication effects.
 
 Investigation of the performance of the system is done by designing a controller for different types of networks as modeled in TrueTime
 (http://www.control.lth.se/truetime/) simulator.
+
+Run 'init_all' before running any simulations.
