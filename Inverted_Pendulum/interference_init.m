@@ -11,4 +11,4 @@ ttInitKernel('prioFP');  % fixed priority scheduling
 period = 0.001;
 offset = 0.0005;
 data = arg;
- ttCreatePeriodicTask('interference_task', offset, period, 'interference_code', data);
+%  ttCreatePeriodicTask('interference_task', offset, period, 'interference_code', data);

@@ -8,12 +8,9 @@ switch seg
     disp('Error in controller: no message received!');
     y = 0.0;
   end
-  r = ttAnalogIn(1);    % Read reference value
-  P = data.K*(r-y);
-  D = data.ad*data.Dold + data.bd*(data.yold-y);
-  data.u = P + D;
-  data.Dold = D;
-  data.yold = y;
+  ref = ttAnalogIn(1);
+  outp = ttCallBlockSystem(1, [ref y], 'controller_observer');
+  data.u = outp;
   exectime = 0.0005;
  case 2
   ttSendMsg(2, data.u, 80);    % Send 80 bits to node 2 (actuator)
