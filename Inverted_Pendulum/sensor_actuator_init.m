@@ -10,11 +10,11 @@ ttInitKernel('prioDM');   % deadline-monotonic scheduling
 
 % Periodic sensor task
 starttime = 0.0;
-period = 0.010;
+period = evalin('base','Ts');
 ttCreatePeriodicTask('sensor_task', starttime, period, 'sensor_code');
 
-% Sporadic actuator task, activated by arriving network message
-deadline = 10.0;
-ttCreateTask('actuator_task', deadline, 'actuator_code');
-ttAttachNetworkHandler('actuator_task')
+% % Sporadic actuator task, activated by arriving network message
+% deadline = 10.0;
+% ttCreateTask('actuator_task', deadline, 'actuator_code');
+% ttAttachNetworkHandler('actuator_task')
 

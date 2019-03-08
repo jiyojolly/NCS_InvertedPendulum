@@ -1,0 +1,31 @@
+function RTW_rtwnameSIDMap() {
+	this.rtwnameHashMap = new Array();
+	this.sidHashMap = new Array();
+	this.rtwnameHashMap["<Root>"] = {sid: "untitled"};
+	this.sidHashMap["untitled"] = {rtwname: "<Root>"};
+	this.rtwnameHashMap["<S1>"] = {sid: "untitled:1"};
+	this.sidHashMap["untitled:1"] = {rtwname: "<S1>"};
+	this.rtwnameHashMap["<S2>"] = {sid: "untitled:4"};
+	this.sidHashMap["untitled:4"] = {rtwname: "<S2>"};
+	this.rtwnameHashMap["<Root>/In1"] = {sid: "untitled:7"};
+	this.sidHashMap["untitled:7"] = {rtwname: "<Root>/In1"};
+	this.rtwnameHashMap["<Root>/Subsystem"] = {sid: "untitled:1"};
+	this.sidHashMap["untitled:1"] = {rtwname: "<Root>/Subsystem"};
+	this.rtwnameHashMap["<Root>/Subsystem1"] = {sid: "untitled:4"};
+	this.sidHashMap["untitled:4"] = {rtwname: "<Root>/Subsystem1"};
+	this.rtwnameHashMap["<Root>/Out1"] = {sid: "untitled:9"};
+	this.sidHashMap["untitled:9"] = {rtwname: "<Root>/Out1"};
+	this.rtwnameHashMap["<S1>/In1"] = {sid: "untitled:2"};
+	this.sidHashMap["untitled:2"] = {rtwname: "<S1>/In1"};
+	this.rtwnameHashMap["<S1>/Out1"] = {sid: "untitled:3"};
+	this.sidHashMap["untitled:3"] = {rtwname: "<S1>/Out1"};
+	this.rtwnameHashMap["<S2>/In1"] = {sid: "untitled:5"};
+	this.sidHashMap["untitled:5"] = {rtwname: "<S2>/In1"};
+	this.rtwnameHashMap["<S2>/Gain"] = {sid: "untitled:10"};
+	this.sidHashMap["untitled:10"] = {rtwname: "<S2>/Gain"};
+	this.rtwnameHashMap["<S2>/Out1"] = {sid: "untitled:6"};
+	this.sidHashMap["untitled:6"] = {rtwname: "<S2>/Out1"};
+	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
+	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
+}
+RTW_rtwnameSIDMap.instance = new RTW_rtwnameSIDMap();
