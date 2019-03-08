@@ -25,8 +25,8 @@ B = [ 0;
 m*l/p];
 
 %% Output
-%C = [1 0 0 0; 0 0 1 0];
-C = [1 0 0 0];
+C = [1 0 0 0; 0 0 1 0];
+%C = [1 0 0 0;0 1 0 0;0 0 1 0;0 0 0 1];
 D = zeros(size(C,1),size(B,2));
 
 %% Build System
@@ -55,3 +55,6 @@ Plant = ss(Ad,[Bd Bd],Cd,0,Ts,'inputname',{'u' 'w'},'outputname','y')
 Qn = 500; 
 Rn = 1;
 [kalmf,K_kalman,P,M] = kalman(Plant,Qn,eye(size(Cd,1))*Rn);
+
+
+

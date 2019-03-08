@@ -9,9 +9,8 @@ switch seg
   end
   disp(["Receving measurment" y])
   ref = ttAnalogIn(1);
-  y_dir = ttAnalogIn(2);
-  disp([ref y_dir]);
-  outp = ttCallBlockSystem(1, [ref y_dir], 'controller_observer');
+  disp([ref y]);
+  outp = ttCallBlockSystem(1, [ref y], 'controller_observer');
   data.u = outp;
   exectime = 0.0005;
  case 2
